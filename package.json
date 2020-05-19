@@ -1,0 +1,22 @@
+{
+  "name": "task003",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "mocha",
+    "lint": "eslint --fix src/**"
+  },
+  "description": "тестовый проект с тестами",
+  "author": "Radik Zainullin",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.0.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "mocha": "^7.1.2",
+    "nodemon": "^2.0.4"
+  }
+}
