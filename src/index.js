@@ -1,14 +1,13 @@
-function traversal(matrix) {
+// Напишите функцию createArithmeticRow так, чтобы она возвращала массив арифметической прогрессии размером size.
+
+function createArithmeticRow(a1, b, size) {
   const result = [];
-  // берем первый элемент и запихиваем в массив
-  for (let i = 0; i < matrix.length; i++ ){
-      for (let j = 0; j < matrix[i].length; j++) {
-          result.push(matrix[i][j]);
-      }
+  for (let i = 0; i < size; i++) {
+    result.push(a1 + b*i);
   }
   return result;
 }
 
 module.exports = {
-  traversal,
+  createArithmeticRow,
 };
