@@ -1,24 +1,25 @@
-const { assert } = require('chai');
+const { expect, assert } = require('chai');
 const { describe, it } = require('mocha');
-
-const { createArithmeticRow } = require('../src');
+const { getItem } = require('../src');
 
 describe('функция createArithmeticRow возвращает массив арифметической прогрессии размером size', () => {
-  it('Тестирование функции createArithmeticRow', () => {
-    assert.deepEqual(createArithmeticRow(0, 0, 1), [0]);
-    assert.deepEqual(createArithmeticRow(0, 0, 3), [0, 0, 0]);
-    assert.deepEqual(createArithmeticRow(0, 0, 5), [0, 0, 0, 0, 0]);
-
-    assert.deepEqual(createArithmeticRow(0, 7, 1), [0]);
-    assert.deepEqual(createArithmeticRow(0, 7, 3), [0, 7, 14]);
-    assert.deepEqual(createArithmeticRow(0, 7, 5), [0, 7, 14, 21, 28]);
-
-    assert.deepEqual(createArithmeticRow(0, 13, 1), [0]);
-    assert.deepEqual(createArithmeticRow(0, 13, 3), [0, 13, 26]);
-    assert.deepEqual(createArithmeticRow(0, 13, 5), [0, 13, 26, 39, 52]);
-
-    assert.deepEqual(createArithmeticRow(100, -88, 1), [100]);
-    assert.deepEqual(createArithmeticRow(100, -88, 3), [100, 12, -76]);
-    assert.deepEqual(createArithmeticRow(100, -88, 5), [100, 12, -76, -164, -252]);
+  it("Тестирование функции getItem", () => {
+    const numbers = [1, 2, 3];
+    expect(getItem(numbers, 0, null)).to.equal(1);
+    expect(getItem(numbers, 2, null)).to.equal(3);
+    expect(getItem(numbers, 5, null)).to.equal(null);
+    assert.deepEqual(numbers, [1, 2, 3]);
+ 
+    const names = ["Алексей", "Сергей", "Дмитрий"];
+    expect(getItem(names, 2, null)).to.equal("Дмитрий");
+    expect(getItem(names, 0, null)).to.equal("Алексей");
+    expect(getItem(names, -2, null)).to.equal(null);
+    // expect(names).toEqual(["Алексей", "Сергей", "Дмитрий"]);
+  
+    const empty = [];
+    expect(getItem(empty, 0, "defaultValue")).to.equal("defaultValue");
+    expect(getItem(empty, 1, "defaultValue")).to.equal("defaultValue");
+    expect(getItem(empty, -1, "defaultValue")).to.equal("defaultValue");
+    // expect(empty).toEqual([]);
   });
 });

@@ -1,13 +1,11 @@
-// Напишите функцию createArithmeticRow так, чтобы она возвращала массив арифметической прогрессии размером size.
+// Функция getItem принимает массив, индекс и значение по умолчание. 
+// Функция должна вернуть элемент массива по указанному индексу если он есть. 
+// Если массив не имеет элемента с искомым индексом, то функция должна вернуть defaultValue.
 
-function createArithmeticRow(a1, b, size) {
-  const result = [];
-  for (let i = 0; i < size; i++) {
-    result.push(a1 + b*i);
-  }
-  return result;
+function getItem(array, index, defaultValue) {
+  return array[index] === undefined? defaultValue: array[index];
 }
 
 module.exports = {
-  createArithmeticRow,
+  getItem,
 };
