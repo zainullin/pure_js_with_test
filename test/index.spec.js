@@ -13,7 +13,7 @@ describe('Тестирование функции getSumArray', () => {
 
     const result = [0, 1, 2];
     assert.deepEqual(getSumArray(array1), result);
-    // expect(array1).toEqual([0, 1, 2]);
+    assert.deepEqual(array1, [0, 1, 2]);
   });
 
   it('Тест 2', () => {
@@ -21,7 +21,7 @@ describe('Тестирование функции getSumArray', () => {
     const result = [5, 5, 7, 7, 8];
     assert.deepEqual(getSumArray(array1), result);
 
-    // expect(array1).toEqual([5, 5, 7, 7, 8]);
+    assert.deepEqual(array1, [5, 5, 7, 7, 8]);
   });
 
   it('Тест 3', () => {
@@ -31,8 +31,8 @@ describe('Тестирование функции getSumArray', () => {
     const result = [0, 0, 0, 0, 0];
 
     assert.deepEqual(getSumArray(array1, array2), result);
-    // expect(array1).toEqual([0, 1, 2, 3, 4]);
-    // expect(array2).toEqual([0, -1, -2, -3, -4]);
+    assert.deepEqual(array1, [0, 1, 2, 3, 4]);
+    assert.deepEqual(array2, [0, -1, -2, -3, -4]);
   });
 
   it('Тест 4', () => {
@@ -45,12 +45,13 @@ describe('Тестирование функции getSumArray', () => {
 
     const result = [15, 14, 12, 9, 5];
     assert.deepEqual(getSumArray(array1, array2, array3, array4, array5, array6), result);
-    // expect(array1).toEqual([]);
-    // expect(array2).toEqual([1]);
-    // expect(array3).toEqual([2, 2]);
-    // expect(array4).toEqual([3, 3, 3]);
-    // expect(array5).toEqual([4, 4, 4, 4]);
-    // expect(array6).toEqual([5, 5, 5, 5, 5]);
+    // console.log(array1);
+    assert.deepEqual(array1, []);
+    assert.deepEqual(array2, [1]);
+    assert.deepEqual(array3, [2, 2]);
+    assert.deepEqual(array4, [3, 3, 3]);
+    assert.deepEqual(array5, [4, 4, 4, 4]);
+    assert.deepEqual(array6, [5, 5, 5, 5, 5]);
   });
 
   it('Тест 5', () => {

@@ -5,7 +5,14 @@
 
 function getSumArray() {
   // получаем массив входных значений
-  const arr = Array.from(arguments);
+  const arr1 = Array.from(arguments);
+  const arr2 = [];
+  for (let i = 0; i < arr1.length; i += 1) {
+    arr2.push(arr1[i].slice());
+  }
+
+  const arr = JSON.parse(JSON.stringify(arr1));
+
   // проходим по входному массиву, элементами являются тоже массивы
   // находим самый длинный, его длина нам нужна
   let max = 0;
@@ -23,7 +30,7 @@ function getSumArray() {
       }
     }
   }
-  console.log(arr);
+
   // Сделаем пустой результирующий массив размером max
   const result = [];
   for (let p = 0; p < max; p += 1) {
@@ -33,7 +40,7 @@ function getSumArray() {
   for (let i = 0; i < result.length; i += 1) {
     result[i] = getResult(i, arr);
   }
-  console.log(result);
+
   return result;
 }
 function getResult(i, arr) {
